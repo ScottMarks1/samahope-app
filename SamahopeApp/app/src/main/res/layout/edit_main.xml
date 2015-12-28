@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/editToMain"
+        android:onClick="backToMain"
+        android:background="#0000be"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:text="Back"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="start|center_vertical"
+        android:textAllCaps="false"
+        android:layout_height="55dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Edit Folders"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:textColor="#0000be"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#ffffff"
+        android:textSize="20dp"
+        android:layout_height="50dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:textColor="#ffffff"
+        android:textAllCaps="false"
+        android:background="#0000be"
+        android:text="Add Folder"
+        android:layout_height="60dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:textColor="#ffffff"
+        android:textAllCaps="false"
+        android:background="#0000be"
+        android:text="Delete Folder"
+        android:layout_height="60dp" />
+</LinearLayout>

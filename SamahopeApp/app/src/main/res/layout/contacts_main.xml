@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="0"
+        android:layout_height="55dp">
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/contactsToMain"
+            android:onClick="backToMain"
+            android:layout_weight="1"
+            android:background="#0000be"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:text="Back"
+            android:paddingLeft="20dp"
+            android:gravity="start|center_vertical"
+            android:textAllCaps="false"
+            android:layout_height="match_parent" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:textColor="#0000be"
+            android:textSize="20dp"
+            android:text="Edit"
+            android:id="@+id/contactsToEdit"
+            android:gravity="center_horizontal|center_vertical"
+            android:textAllCaps="false"
+            android:layout_height="match_parent" />
+        <Button
+            android:layout_width="0dp"
+            android:paddingRight="20dp"
+            android:layout_weight="1"
+            android:background="#0000be"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:text="Add"
+            android:id="@+id/contactsToAdd"
+            android:onClick="addContact"
+            android:gravity="end|center_vertical"
+            android:textAllCaps="false"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:clickable="true"
+                android:onClick="toDetail"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_height="70dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Jack Skellington"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:gravity="start|center_vertical"
+                    android:layout_height="38dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text=""
+                    android:background="#e0e0e0"
+                    android:layout_height="2dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_height="60dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Name"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:gravity="start|center_vertical"
+                    android:layout_height="38dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text=""
+                    android:background="#e0e0e0"
+                    android:layout_height="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

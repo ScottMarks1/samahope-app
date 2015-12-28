@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/settingsToMain"
+        android:onClick="backToMain"
+        android:background="#0000be"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:text="Back"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="start|center_vertical"
+        android:textAllCaps="false"
+        android:layout_height="55dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Settings"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:textColor="#0000be"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#ffffff"
+        android:textSize="20dp"
+        android:layout_height="50dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#ffffff"
+        android:layout_height="60dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:text="Notifications:"
+            android:textColor="#000000"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content" />
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#ffffff"
+        android:layout_height="60dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:text="Viberation for Notification:"
+            android:textColor="#000000"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content" />
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:background="#0000be"
+        android:textColor="#ff3030"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:text="Reset SamahopeApp"
+        android:layout_margin="10dp"
+        android:layout_height="60dp" />
+
+</LinearLayout>

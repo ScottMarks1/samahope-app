@@ -18,6 +18,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MessagesActivity"/>
+        <activity android:name=".ContactsActivity"/>
+        <activity android:name=".AddContact"/>
+        <activity android:name=".StoredActivity"/>
+        <activity android:name=".DeletedActivity"/>
+        <activity android:name=".ContactDetail"/>
+        <activity android:name=".MessageDetail"/>
+        <activity android:name=".SettingsMain"/>
+        <activity android:name=".SendMessage"/>
+        <activity android:name=".EditActivity"/>
+        <activity android:name=".SendMessageToContact"/>
+
     </application>
 
 </manifest>
