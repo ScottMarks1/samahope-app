@@ -4,11 +4,12 @@ import java.io.FileWriter;
 import java.io.File;
 import java.io.IOException;
 import java.lang.Integer;
+import java.lang.Character;
 public class ParseTexts {
 	
 	/* Creates a new table and fills the first row with the correct headers. */
 	public static ArrayList<String[]> createTable() {
-		String[] header = {"Date", "Name of Client", "Age", "Sex", "Village", 
+		String[] header = {"Date", "Name of Health Worker", "Name of Client", "Age", "Sex", "Village", 
 			"Contact", "Type of family planning", "Side effect", "First Visit", 
 			"Re-attend", "Referral reason and outcome", "Other comments"};
 		ArrayList<String[]> table = new ArrayList<String[]>();
@@ -20,8 +21,13 @@ public class ParseTexts {
 	 * adds the data to the table. */
 	public static void addDataToTable(String s, ArrayList<String[]> table) {
 		if (isData(s)) {
-			String[] row = createRowFromString(s);
-			table.add(row);
+			try {
+				String[] row = createRowFromString(s);
+				table.add(row);
+			}
+			catch (Exception e) {
+				//e.printStackTrace();
+			}
 		}
 	}
 
@@ -30,10 +36,8 @@ public class ParseTexts {
 		try {
 			File file = new File(filePath);
 			if (file.createNewFile()) {
-				System.out.println("File is created!");
 			}
 			else {
-				System.out.println("File already exists.");
 			}
 			FileWriter writer = new FileWriter(file);
 			for (int i = 0; i < listOfRows.size(); i++) {
@@ -66,6 +70,23 @@ public class ParseTexts {
 		return tag.equals("chws");
 	}
 
+	/* Given a char, returns the appropriate type of family planning. */
+	private static String typeOfFamilyPlanning(char c) {
+		String s = null;
+		c = Character.toLowerCase(c);
+		if (c == 'a') s = "Pills";
+		else if (c == 'b') s = "Injectable";
+		else if (c == 'c') s = "Condoms";
+		else if (c == 'd') s = "Moon beads";
+		else if (c == 'e') s = "Natural method";
+		else if (c == 'f') s = "Emergency contraception";
+		else if (c == 'g') s = "Norplant";
+		else if (c == 'h') s = "IUD";
+		else if (c == 'i') s = "BTL";
+		else if (c == 'j') s = "Vasectomy";
+		return s;
+	}
+
 	/* Given a string that contains patient data, returns an array properly
 	 * organizing the data. The array represents a row in the spreadsheet,
 	 * and the ith element in the array represents the data to be stored in
@@ -74,10 +95,11 @@ public class ParseTexts {
 		// remove CHWS tag
 		s = (s.charAt(4) == ' ') ? s.substring(5) : s.substring(4);
 		// create array (row) to fill
-		String[] row = new String[12];
+		String[] row = new String[13];
 		// parse string
-		for (int i = 1; i < 13; i++) {
+		for (int i = 1; i < 14; i++) {
 			int j = s.indexOf((i+"."));
+			if (j > 0 && s.charAt(j-1) == '1') j = -1;
 			if (j != -1) {
 				boolean foundNextInt = false;
 				int ctr = i + 1;
@@ -86,10 +108,15 @@ public class ParseTexts {
 					int a = (i > 9) ? 3 : 2;
 					if (s.charAt(j+a) == ' ') a++;
 					if (j != -1 && k != -1) {
-						row[i-1] = s.substring(j+a, k);
+						if (i == 8) {
+							String s8 = typeOfFamilyPlanning(s.charAt(j+a));
+							if (s8 != null) row[i-1] = s8;
+							else row[i-1] = s.substring(j+a, k);
+						}
+						else row[i-1] = s.substring(j+a, k);
 						foundNextInt = true;
 					}
-					else if (ctr < 13) {
+					else if (ctr < 14) {
 						ctr++;
 					}
 					else {
